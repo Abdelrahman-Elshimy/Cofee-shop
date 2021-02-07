@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand text-center" routerLink="">
+            <span>Coffee
+                <small>blend</small>
+            </span>
+        </a>
+        <button (click)="toggleNav()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"
+                        routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="services">services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="about">About</a>
+                </li>
+
+                <li class="nav-item d-flex align-items-center drop">
+                    <div class="dropdown">
+                        <a class="dropbtn" routerLinkActive="active" routerLink="shop">Shop</a>
+                        <div class="dropdown-content">
+                            <a routerLink="cart">Cart</a>
+                            <a routerLink="checkout">Check Out</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="contact">contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

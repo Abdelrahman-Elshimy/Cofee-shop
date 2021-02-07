@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: url("./assets/images/bg_4.jpg") no-repeat fixed;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,255 @@
+<ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+            <span class="subheading">Welcome</span>
+            <h1 class="mb-4">The Best Coffee Testing <br> Experience</h1>
+            <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary
+                <br> regelialia.
+            </p>
+            <div class="d-flex justify-content-center links-content">
+                <div class="order">
+                    <a routerLink="product">Order Now</a>
+                </div>
+                <div class="menu">
+                    <a routerLink="menu">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+            <span class="subheading">Welcome</span>
+            <h1 class="mb-4">Amazing Taste &amp; Beautiful <br> Place</h1>
+            <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary
+                <br> regelialia.
+            </p>
+            <div class="d-flex justify-content-center links-content">
+                <div class="order">
+                    <a routerLink="product">Order Now</a>
+                </div>
+                <div class="menu">
+                    <a routerLink="menu">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+            <span class="subheading">Welcome</span>
+            <h1 class="mb-4">Creamy Hot and Ready to <br> Serve</h1>
+            <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary
+                <br> regelialia.
+            </p>
+
+            <div class="d-flex justify-content-center links-content">
+                <div class="order">
+                    <a routerLink="product">Order Now</a>
+                </div>
+                <div class="menu">
+                    <a routerLink="menu">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel>
+<!-- <div class="container text-center mt-5">
+    <div class="row text-center">
+        <div class="col-lg-4 mb-5 col-md-6" *ngFor="let good of goods">
+            <div class="card" style="width: 100%">
+                <img class="card-img-top" src="../{{good.photoUrl}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{good.name}}</h5>
+                    <p class="card-text">{{ good.description }}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<section class="booking">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="content">
+                    <div class="icon-shape d-flex">
+                        <div class="img mr-2">
+                            <img src="../assets/images/call.png" alt="">
+                        </div>
+                        <div class="content-box">
+                            <h5>000 (123) 456 7890</h5>
+                            <p>A small river named Duden flows by their place and supplies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="content">
+                    <div class="icon-shape d-flex">
+                        <div class="img mr-2">
+                            <img src="../assets/images/placeholder.png" alt="">
+                        </div>
+                        <div class="content-box">
+                            <h5>198 West 21th Street </h5>
+                            <p>203 Fake St. Mountain View, San Francisco, California, USA </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="content">
+                    <div class="icon-shape d-flex">
+                        <div class="img mr-2">
+                            <img src="../assets/images/clock.png" alt="">
+                        </div>
+                        <div class="content-box">
+                            <h5>Open Monday-Friday</h5>
+                            <p>8:00am - 9:00pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay">
+                <div class="content-form">
+                    <form>
+                        <div class="container">
+                            <h3 class="mb-2">BOOK A TABLE</h3>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" placeholder="First Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input class="form-control" type="date" name="" id="" placeholder="Date">
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="time" name="" id="" placeholder="Time">
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="tel" name="" id="" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <textarea name="" id="" class="form-control" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit">Appointment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="story">
+    <div class="story-content">
+        <div class="content"></div>
+        <div class="story-text">
+            <div class="cont">
+                <span class="subheading">Discover</span>
+                <h2 class="mb-4">OUR STORY</h2>
+                <p>On her way she met a copy. The copy warned the Little Blind Text,
+                    that where it came from it would have been rewritten a thousand times and
+                    everything that was left from its origin would be the word "and" and the Little Blind Text
+                    should turn around and return to its own, safe country. But nothing the copy said could convince
+                    her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with
+                    Longe
+                    and Parole and dragged her
+                    into their agency, where they abused her for their.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="content">
+                    <div class="icon-serv">
+                        <img src="../assets/images/choices.png" alt="">
+                    </div>
+                    <h4 class="mb-4 mt-4">EASY TO ORDER</h4>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+                        unorthographic.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="content">
+                    <div class="icon-serv">
+                        <img src="../assets/images/delivery-truck.png" alt="">
+                    </div>
+                    <h4 class="mb-4 mt-4">FASTEST DELIVERY </h4>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+                        unorthographic.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="content">
+                    <div class="icon-serv">
+                        <img src="../assets/images/coffee.png" alt="">
+                    </div>
+                    <h4 class="mb-4 mt-4">QUALITY COFFEE </h4>
+                    <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+                        unorthographic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="menu">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6">
+                <div class="content text-right">
+                    <span class="subheading">Discover</span>
+                    <h2 class="mb-4">OUR MENU</h2>
+                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
+                        Consonantia, there
+                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                        a large language ocean.</p>
+                    <a routerLink="menu">View Full Menu</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-6 toTop">
+                        <div class="img-menu mb-4">
+                            <img src="../assets/images/menu-1.jpg" alt="" width="100%">
+                        </div>
+                        <div class="img-menu mb-4">
+                            <img src="../assets/images/menu-2.jpg" alt="" width="100%">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img-menu mb-4">
+                            <img src="../assets/images/menu-3.jpg" alt="" width="100%">
+                        </div>
+                        <div class="img-menu mb-4">
+                            <img src="../assets/images/menu-4.jpg" alt="" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
