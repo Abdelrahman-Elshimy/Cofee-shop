@@ -20,6 +20,7 @@ import { CheckoutComponent } from './components/customers/checkout/checkout.comp
 import { ContactComponent } from './components/customers/contact/contact.component';
 import { SingleProductComponent } from './components/customers/single-product/single-product.component';
 import { FormsModule } from '@angular/forms';
+import { SharedSectionTopComponent } from './components/customers/design-parts/shared-section-top/shared-section-top.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     CheckoutComponent,
     ContactComponent,
     SingleProductComponent,
+    SharedSectionTopComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, FormsModule],
   providers: [],

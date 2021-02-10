@@ -1,0 +1,37 @@
+.menu {
+  padding: 7rem 0;
+  color: #ffffff;
+}
+.menu .menu-content img {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+.menu h2 {
+  font-size: 1.5rem;
+}
+
+.menu .menu-content .content p {
+  /* margin: 0; */
+  color: #b1b1b1;
+}
+.menu .menu-content .content div a {
+  text-decoration: none;
+}
+.menu .menu-content .content div a p:first-child {
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-bottom: 1px dashed #c49b63;
+  color: #ffffff;
+}
+.menu .menu-content .content div p:last-child {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #c49b63;
+}
+.menu .menu-content .content p:last-child {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #6d6c6d;
+}

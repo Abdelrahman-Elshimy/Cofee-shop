@@ -1,7 +1,7 @@
 .navbar {
   position: absolute;
   background-color: transparent !important;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
   border-bottom: 0.1px solid rgba(231, 221, 221, 0.3);
 }
