@@ -13,7 +13,7 @@
                 <div class="order">
                     <a routerLink="product">Order Now</a>
                 </div>
-                <div class="menu">
+                <div class="menus">
                     <a routerLink="menu">View Menu</a>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="order">
                     <a routerLink="product">Order Now</a>
                 </div>
-                <div class="menu">
+                <div class="menus">
                     <a routerLink="menu">View Menu</a>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                 <div class="order">
                     <a routerLink="product">Order Now</a>
                 </div>
-                <div class="menu">
+                <div class="menus">
                     <a routerLink="menu">View Menu</a>
                 </div>
             </div>
@@ -120,39 +120,48 @@
             </div>
             <div class="overlay">
                 <div class="content-form">
-                    <form>
+                    <form #f="ngForm" (submit)="book(f)">
                         <div class="container">
                             <h3 class="mb-2">BOOK A TABLE</h3>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" placeholder="First Name">
+                                    <input class="form-control" type="text" placeholder="First Name" name="firstName"
+                                        ngModel required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" placeholder="Last Name">
+                                    <input class="form-control" type="text" placeholder="Last Name" name="lastName"
+                                        ngModel required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <input class="form-control" type="date" name="" id="" placeholder="Date">
+                                    <input class="form-control" type="date" name="" id="" placeholder="Date" name="date"
+                                        ngModel required>
                                 </div>
                                 <div class="col-md-4">
-                                    <input class="form-control" type="time" name="" id="" placeholder="Time">
+                                    <input class="form-control" type="time" name="" id="" placeholder="Time" name="time"
+                                        ngModel required>
                                 </div>
                                 <div class="col-md-4">
-                                    <input class="form-control" type="tel" name="" id="" placeholder="Phone Number">
+                                    <input class="form-control" type="tel" name="" id="" placeholder="Phone Number"
+                                        name="phoneNumber" ngModel required minlength="11">
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
-                                    <textarea name="" id="" class="form-control" placeholder="Message"></textarea>
+                                    <textarea name="" id="" class="form-control" placeholder="Message" name="message"
+                                        ngModel required></textarea>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="submit">Appointment</button>
+                                    <button type="submit" [disabled]="f.invalid">Appointment</button>
                                 </div>
                             </div>
                         </div>
 
                     </form>
+                    <div class="error text-center mt-2">
+                        <span style="color: red;">{{ errorForm }}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,6 +258,402 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="details text-center">
+    <div class="overlay"></div>
+    <div class="container content-details">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="content-detail">
+                    <div class="image-detail">
+                        <div class="rotated"></div>
+                        <div class="image-one">
+                            <img src="../assets/images/coffee-cup.png" alt="">
+                        </div>
+                    </div>
+                    <p>10</p>
+                    <h5 class="mb-2 mt-2">Coffee Branches</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="content-detail">
+                    <div class="image-detail">
+                        <div class="rotated"></div>
+                        <div class="image-one">
+                            <img src="../assets/images/medal.png" alt="">
+                        </div>
+                    </div>
+                    <p>33</p>
+                    <h5 class="mb-2 mt-2">Number of Awards </h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="content-detail">
+                    <div class="image-detail">
+                        <div class="rotated"></div>
+                        <div class="image-one">
+                            <img src="../assets/images/happiness.png" alt="">
+                        </div>
+                    </div>
+                    <p>1003</p>
+                    <h5 class="mb-2 mt-2">Happy Customers</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="content-detail">
+                    <div class="image-detail">
+                        <div class="rotated"></div>
+                        <div class="image-one">
+                            <img src="../assets/images/staff.png" alt="">
+                        </div>
+                    </div>
+                    <p>88</p>
+                    <h5 class="mb-2 mt-2">Our Staff</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="best text-center mb-5 mt-5">
+    <div class="container">
+        <span class="subheading">Discover</span>
+        <h2 class="mb-4">BEST COFFEE SELLERS </h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia <br> and Consonantia, there live the
+            blind
+            texts.</p>
+        <div class="row mt-5">
+            <div class="col-lg-3 mb-5 col-md-6">
+                <img src="../assets/images/menu-1.jpg" alt="" width="100%" height="200px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
+                <p>A small river named Duden flows by their place and supplies</p>
+                <p class="price">$5.6</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-3 mb-5 col-md-6">
+                <img src="../assets/images/menu-2.jpg" alt="" width="100%" height="200px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
+                <p>A small river named Duden flows by their place and supplies</p>
+                <p class="price">$5.6</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-3 mb-5 col-md-6">
+                <img src="../assets/images/menu-3.jpg" alt="" width="100%" height="200px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
+                <p>A small river named Duden flows by their place and supplies</p>
+                <p class="price">$5.6</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-3 mb-5 col-md-6">
+                <img src="../assets/images/menu-4.jpg" alt="" width="100%" height="200px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
+                <p>A small river named Duden flows by their place and supplies</p>
+                <p class="price">$5.6</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="gallery d-flex">
+        <div class="gallery-content">
+            <img src="../assets/images/gallery-1.jpg" alt="" width="100%" height="300px">
+        </div>
+        <div class="gallery-content">
+            <img src="../assets/images/gallery-2.jpg" alt="" width="100%" height="300px">
+        </div>
+        <div class="gallery-content">
+            <img src="../assets/images/gallery-3.jpg" alt="" width="100%" height="300px">
+        </div>
+        <div class="gallery-content">
+            <img src="../assets/images/gallery-4.jpg" alt="" width="100%" height="300px">
+        </div>
+    </div>
+</section>
+
+<section class="best dishes text-center mb-5 mt-5">
+    <div class="container">
+        <span class="subheading">Discover</span>
+        <h2 class="mb-4">OUR PRODUCTS</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia <br> and Consonantia, there live the
+            blind
+            texts.</p>
+        <div class="tabs mt-5">
+            <button [class.active]="tabs == 'dish'" (click)="changeTab('dish')">Main Dish</button>
+            <button [class.active]="tabs == 'drink'" (click)="changeTab('drink')">Drinks</button>
+            <button [class.active]="tabs == 'dessert'" (click)="changeTab('dessert')">Desserts</button>
+        </div>
+        <div class="row mt-5" *ngIf="tabs == 'dish'">
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/dish-1.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">GRILLED BEEF</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/dish-2.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">GRILLED BEEF</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/dish-3.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">GRILLED BEEF</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+        </div>
+        <div class="row mt-5" *ngIf="tabs == 'drink'">
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/drink-1.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">LEMONADE JUICE</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/drink-2.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">PINEAPPLE JUICE</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/drink-3.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">SODA DRINKS</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+        </div>
+        <div class="row mt-5" *ngIf="tabs == 'dessert'">
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/dessert-1.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">HOT CAKE HONEY</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/dessert-2.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">HOT CAKE HONEY</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+            <div class="col-lg-4 mb-5 col-md-6">
+                <img src="../assets/images/dessert-3.jpg" alt="" width="100%" height="300px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">HOT CAKE HONEY</a>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                <p class="price">$2.90</p>
+                <a class="addtocart" routerLink="cart">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonials text-center">
+    <div class="overlay"></div>
+    <div class="test-content">
+        <div class="container mb-5">
+            <span class="subheading">Testimony</span>
+            <h2 class="mb-4 headah">CUSTOMERS SAYS</h2>
+            <p class="desc mb-5">Far far away, behind the word mountains, far from the countries Vokalia <br> and
+                Consonantia, there live
+                the
+                blind
+                texts.</p>
+
+        </div>
+        <div class="says text-left">
+            <div class="box">
+                <p>“Even the all-powerful Pointing has no control
+                    about the blind texts it is an almost unorthographic
+                    life One day however a small.”
+                </p>
+                <div class="prof">
+                    <div class="image-info-profile">
+                        <img src="../assets/images/person_2.jpg" alt="">
+                    </div>
+                    <div class="content-info">
+                        <p>Louise Kelly</p>
+                        <span>Illustrator Designer</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <p>“Even the all-powerful Pointing has no control about the blind texts it is an
+                    almost unorthographic life One day however a small line of blind text by
+                    the name of Lorem Ipsum decided to leave for the far World of Grammar.”
+                </p>
+                <div class="prof">
+                    <div class="image-info-profile">
+                        <img src="../assets/images/person_3.jpg" alt="">
+                    </div>
+                    <div class="content-info">
+                        <p>Louise Kelly</p>
+                        <span>Illustrator Designer</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <p>“Even the all-powerful Pointing has no control about the blind texts it is an almost
+                    unorthographic life One day however a small line of blind text by the name. ”
+                </p>
+                <div class="prof">
+                    <div class="image-info-profile">
+                        <img src="../assets/images/person_2.jpg" alt="">
+                    </div>
+                    <div class="content-info">
+                        <p>Louise Kelly</p>
+                        <span>Illustrator Designer</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <p>“Even the all-powerful Pointing has no control about the blind texts it is an almost
+                    unorthographic life One day however.”
+                </p>
+                <div class="prof">
+                    <div class="image-info-profile">
+                        <img src="../assets/images/person_3.jpg" alt="">
+                    </div>
+                    <div class="content-info">
+                        <p>Louise Kelly</p>
+                        <span>Illustrator Designer</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <p>“Even the all-powerful Pointing has no control about the blind texts it is an almost
+                    unorthographic life One day however a small line of blind text by the name. ”
+                </p>
+                <div class="prof">
+                    <div class="image-info-profile">
+                        <img src="../assets/images/person_2.jpg" alt="">
+                    </div>
+                    <div class="content-info">
+                        <p>Louise Kelly</p>
+                        <span>Illustrator Designer</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog">
+    <div class="container text-center">
+        <h2 class="mb-4 headah">RECENT FROM BLOG</h2>
+        <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and <br> Consonantia,
+            there live the
+            blind
+            texts.</p>
+        <div class="row">
+            <div class="col-lg-4 text-left">
+                <div class="blog-content">
+                    <img src="../assets/images/image_1.jpg" alt="">
+                    <div class="blog-comment d-flex mt-3">
+                        <p>Sept 10, 2018</p>
+                        <p>Admin</p>
+                        <p>
+                            3 Comments
+                        </p>
+                    </div>
+                    <h5><a class="mb-4">The Delicious Pizza</a></h5>
+                    <p class="mt-3">A small river named Duden flows by their place and supplies it with the necessary
+                        regelialia.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-left">
+                <div class="blog-content">
+                    <img src="../assets/images/image_2.jpg" alt="">
+                    <div class="blog-comment d-flex mt-3">
+                        <p>Sept 10, 2018</p>
+                        <p>Admin</p>
+                        <p>
+                            3 Comments
+                        </p>
+                    </div>
+                    <h5><a class="mb-4">The Delicious Pizza</a></h5>
+                    <p class="mt-3">A small river named Duden flows by their place and supplies it with the necessary
+                        regelialia.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-left">
+                <div class="blog-content">
+                    <img src="../assets/images/image_3.jpg" alt="">
+                    <div class="blog-comment d-flex mt-3">
+                        <p>Sept 10, 2018</p>
+                        <p>Admin</p>
+                        <p>
+                            3 Comments
+                        </p>
+                    </div>
+                    <h5><a class="mb-4">The Delicious Pizza</a></h5>
+                    <p class="mt-3">A small river named Duden flows by their place and supplies it with the necessary
+                        regelialia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form #fo="ngForm" (submit)="book(fo)">
+                    <div class="container">
+                        <h3 class="mb-5">BOOK A TABLE</h3>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" placeholder="First Name" name="firstName"
+                                    ngModel required>
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" placeholder="Last Name" name="lastName" ngModel
+                                    required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input class="form-control" type="date" name="" id="" placeholder="Date" name="date"
+                                    ngModel required>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="time" name="" id="" placeholder="Time" name="time"
+                                    ngModel required>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" type="tel" name="" id="" placeholder="Phone Number"
+                                    name="phoneNumber" ngModel required minlength="11">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <textarea name="" id="" class="form-control" placeholder="Message" name="message"
+                                    ngModel required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" [disabled]="fo.invalid">Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>

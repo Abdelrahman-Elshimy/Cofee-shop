@@ -19,6 +19,7 @@ import { ShopComponent } from './components/customers/shop/shop.component';
 import { CheckoutComponent } from './components/customers/checkout/checkout.component';
 import { ContactComponent } from './components/customers/contact/contact.component';
 import { SingleProductComponent } from './components/customers/single-product/single-product.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SingleProductComponent } from './components/customers/single-product/si
     ContactComponent,
     SingleProductComponent,
   ],
-  imports: [BrowserModule, NgbModule, AppRoutingModule],
+  imports: [BrowserModule, NgbModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

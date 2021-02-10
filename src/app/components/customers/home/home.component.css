@@ -47,7 +47,7 @@ ngb-carousel img {
   color: #c49b63;
   border: 1px solid #c49b63;
 }
-.links-content > div.menu:hover {
+.links-content > div.menus:hover {
   background-color: #c49b63;
   border: 1px solid transparent;
 }
@@ -95,6 +95,9 @@ ngb-carousel img {
   color: red;
   opacity: 1;
 } */
+.booking form {
+  font-size: 1rem;
+}
 .booking textarea {
   height: 50px;
 }
@@ -218,4 +221,266 @@ ngb-carousel img {
 .menu a:hover {
   background-color: #c49b63;
   color: #ffffff;
+}
+
+.details {
+  background-image: url("../../../../assets/images/bg_2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  padding: 7rem 0;
+}
+
+.details .image-detail {
+  box-sizing: content-box;
+  border: 1px solid #c49b63;
+  margin-bottom: 20px;
+  width: 5rem;
+  margin: auto;
+  height: 5rem;
+  position: relative;
+  transition: 0.5s all ease-in-out;
+  margin-bottom: 1.6rem;
+}
+.details .image-detail .rotated {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: 0.5s all ease-in-out;
+}
+.details .image-detail .image-one {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details .image-detail:hover {
+  border: 1px solid transparent;
+}
+.details .image-detail:hover .rotated {
+  transform: rotate(45deg);
+  background-color: rgb(0, 0, 0, 0.6);
+}
+
+.details .content-detail p {
+  color: #c49b63;
+  font-size: 2rem;
+}
+.details .content-detail h5 {
+  color: #999b9b;
+  font-size: 1.3rem;
+}
+.details .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.6);
+  z-index: 2;
+}
+.details .content-details {
+  position: relative;
+  z-index: 3;
+}
+
+.best {
+  color: #999b9b;
+}
+.best .subheading {
+  margin-bottom: -1.4rem;
+  font-size: 3.5rem;
+}
+.best h2 {
+  font-size: 3rem;
+  color: #ffffff;
+}
+.best .name {
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.best .name + p {
+  font-size: 0.9rem;
+}
+.dishes .name + p {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.best .price {
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+.best .addtocart {
+  padding: 0.6rem 1.6rem;
+  border: 1px solid #c49b63;
+  color: #c49b63;
+  font-size: 0.9rem;
+  transition: 0.5s all ease-in-out;
+  text-decoration: none;
+}
+
+.best .addtocart:hover {
+  border: 1px solid transparent;
+  background-color: #c49b63;
+  color: #ffffff;
+}
+
+.dishes .tabs button {
+  border: none;
+  border-bottom: 2px solid #c49b63;
+  color: #c49b63;
+  margin: 10px;
+  background-color: transparent;
+  padding: 0.7rem 1.7rem;
+  transition: 0.5s all ease-in-out;
+}
+.dishes .tabs button:hover,
+.dishes .tabs button.active {
+  background-color: #c49b63;
+  color: #ffffff;
+}
+
+.testimonials {
+  background-image: url("../../../../assets/images/bg_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  padding: 7rem 0 0 0;
+}
+.testimonials .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.testimonials .test-content {
+  position: relative;
+  z-index: 3;
+}
+.testimonials .subheading {
+  font-size: 3rem;
+  margin-bottom: -1.8rem;
+}
+.testimonials .headah {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.testimonials .desc {
+  color: #686868;
+}
+
+.testimonials .says .box {
+  width: 20%;
+  display: inline-block;
+  background-color: #c49b63;
+  padding: 25px;
+  font-size: 0.95rem;
+}
+.testimonials .says .box:nth-child(even) {
+  background-color: #b18c59;
+}
+.testimonials .prof {
+  overflow: hidden;
+}
+.testimonials .prof img {
+  width: 50px;
+  border-radius: 50%;
+}
+.testimonials .prof p {
+  margin-bottom: 5px;
+}
+@media (max-width: 1015px) {
+  .testimonials .says .box {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 750px) {
+  .testimonials .says .box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.blog {
+  padding: 100px 0;
+  color: #ffffff;
+}
+.blog h2 {
+  font-size: 3rem;
+}
+.blog h2 + p {
+  color: #686868;
+}
+
+.blog img {
+  width: 100%;
+  height: 280px;
+}
+.blog .blog-comment {
+  color: #686868;
+}
+.blog .blog-comment p {
+  margin-right: 10px;
+}
+.blog a {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.blog a + p {
+  color: #686868;
+}
+
+.contact {
+  background-color: #000000;
+  padding: 7rem 0;
+  color: #ffffff;
+}
+.contact input,
+.contact textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #c49b63;
+  border-radius: 0;
+  color: #eeeeee;
+}
+.contact textarea {
+  height: 80px;
+}
+.contact input::placeholder,
+.contact textarea::placeholder {
+  color: #eeeeee;
+}
+.contact input:focus,
+.contact textarea:focus {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #c49b63;
+}
+.contact button {
+  width: 100%;
+  height: 80px;
+  background-color: #c49b63;
+  color: #ffffff;
+  border: none;
 }
