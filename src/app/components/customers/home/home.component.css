@@ -404,37 +404,6 @@ ngb-carousel img {
   }
 }
 
-.blog {
-  padding: 100px 0;
-  color: #ffffff;
-}
-.blog h2 {
-  font-size: 3rem;
-}
-.blog h2 + p {
-  color: #686868;
-}
-
-.blog img {
-  width: 100%;
-  height: 280px;
-}
-.blog .blog-comment {
-  color: #686868;
-}
-.blog .blog-comment p {
-  margin-right: 10px;
-}
-.blog a {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1.6rem;
-}
-.blog a + p {
-  color: #686868;
-}
-
 .contact {
   background-color: #000000;
   padding: 7rem 0;

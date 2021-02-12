@@ -22,6 +22,7 @@ import { SingleProductComponent } from './components/customers/single-product/si
 import { FormsModule } from '@angular/forms';
 import { SharedSectionTopComponent } from './components/customers/design-parts/shared-section-top/shared-section-top.component';
 import { ServicesSectionComponent } from './components/customers/design-parts/services-section/services-section.component';
+import { BlogSectionComponent } from './components/customers/design-parts/blog-section/blog-section.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ServicesSectionComponent } from './components/customers/design-parts/se
     SingleProductComponent,
     SharedSectionTopComponent,
     ServicesSectionComponent,
+    BlogSectionComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, FormsModule],
   providers: [],
