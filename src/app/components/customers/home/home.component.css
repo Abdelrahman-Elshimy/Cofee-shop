@@ -178,22 +178,6 @@ ngb-carousel img {
   }
 }
 
-.services {
-  background-color: #c49b63;
-  padding: 5rem 0;
-}
-.services h4 {
-  font-size: 1.2rem;
-  margin: 30px;
-}
-.services img {
-  padding: 15px;
-  border: 1px solid #4c3b24;
-}
-.services p {
-  color: #1d150b;
-}
-
 .menu {
   padding: 100px 0 30px 0;
 }
