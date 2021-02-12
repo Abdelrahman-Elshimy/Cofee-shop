@@ -122,61 +122,6 @@ ngb-carousel img {
 .booking img {
   width: 20px;
 }
-.story {
-  width: 100%;
-  height: 80vh;
-}
-.story .story-content {
-  display: flex;
-  height: 100%;
-}
-.story .story-content .content {
-  width: 50%;
-  background-image: url("../../../../assets/images/about.jpg");
-}
-.story .story-text {
-  width: 50%;
-  height: 100%;
-  display: flex;
-}
-.story .story-text .cont {
-  padding: 2rem 2rem;
-  background-color: rgb(0, 0, 0, 0.6);
-  color: #ffffff;
-  margin: auto;
-  z-index: 2;
-  width: 90%;
-  margin-left: -70px;
-}
-.story .story-text .cont .subheading {
-  font-size: 3rem;
-  margin-bottom: -1.8rem;
-}
-.story .story-text .cont h2 {
-  font-size: 3rem;
-}
-.story .story-text .cont p {
-  color: #686868;
-}
-@media (max-width: 1024px) {
-  .story .story-content {
-    display: block;
-  }
-  .story .story-content .content,
-  .story .story-text {
-    width: 100%;
-  }
-  .story .story-text .cont {
-    width: 100%;
-    margin-left: 0;
-  }
-  .story {
-    background-image: url("../../../../assets/images/about.jpg");
-  }
-  .story .story-text .cont p {
-    color: #eeeeee;
-  }
-}
 
 .menu {
   padding: 100px 0 30px 0;

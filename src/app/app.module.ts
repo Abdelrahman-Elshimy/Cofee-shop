@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedSectionTopComponent } from './components/customers/design-parts/shared-section-top/shared-section-top.component';
 import { ServicesSectionComponent } from './components/customers/design-parts/services-section/services-section.component';
 import { BlogSectionComponent } from './components/customers/design-parts/blog-section/blog-section.component';
+import { StorySectionComponent } from './components/customers/design-parts/story-section/story-section.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { BlogSectionComponent } from './components/customers/design-parts/blog-s
     SharedSectionTopComponent,
     ServicesSectionComponent,
     BlogSectionComponent,
+    StorySectionComponent,
   ],
   imports: [BrowserModule, NgbModule, AppRoutingModule, FormsModule],
   providers: [],
