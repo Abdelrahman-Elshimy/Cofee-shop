@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Good } from 'src/app/interfaces/good.interface';
+import { Good } from 'src/app/shared/interfaces/good.interface';
 
 @Component({
   selector: 'app-home',
