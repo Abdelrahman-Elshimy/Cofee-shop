@@ -5,7 +5,7 @@ export enum PageTitle {
   about = 'about',
   shop = 'shop',
   cart = 'cart',
-  contact = 'contact',
+  contact = 'contact us',
   checkout = 'check out',
   singleProduct = 'Product Details',
 }

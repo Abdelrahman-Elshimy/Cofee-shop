@@ -1,1 +1,56 @@
 <app-shared-section-top></app-shared-section-top>
+<section class="carts">
+    <div class="container" *ngIf="carts.length > 0">
+        <div class="mb-3" *ngFor="let cart of carts; index as i">
+            <div class="content d-flex ">
+                <div>
+                    <button (click)="removeCart(i)">X</button>
+                </div>
+                <div>
+                    <img src="{{cart.img}}" alt="">
+                </div>
+                <div class="detail text-center mt-2">
+                    <span>{{ cart.name }}</span>
+                </div>
+                <div>
+                    <span>${{ cart.price }}</span>
+                </div>
+                <div>
+                    <input disabled class="form-control" type="number" value="{{ cart.amount }}">
+                </div>
+                <div>
+                    <span>${{ cart.price * cart.amount }}</span>
+                </div>
+            </div>
+            <div class="w-100">
+                <hr>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h5>CART TOTALS</h5>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <p><span>Subtotal:</span> ${{total}}</p>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <p><span>Delivery:</span> $0</p>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <p><span>Discount:</span> $3</p>
+            </div>
+            <div class="col-lg-4">
+                <p><span>total: </span> ${{ total - 3 }} </p>
+            </div>
+            <div class="col-lg-8">
+                <a routerLink="">Processed to checkout</a>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center" *ngIf="carts.length == 0">
+        <div class="row text-center">
+            <h5 class="m-auto">No Carts yet</h5>
+        </div>
+    </div>
+</section>

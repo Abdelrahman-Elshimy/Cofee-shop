@@ -22,20 +22,7 @@
   height: 54px;
   padding: 10px 20px;
 }
-/* .product .amount > div:not(:nth-child(2)) {
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #c49b63;
-  height: 54px;
-  display: flex;
-  width: 50px;
-  justify-content: center;
-  align-items: center;
-}
-.product .amount > div:not(:nth-child(2)) p {
-  padding: 0 !important;
-  margin: 0 !important;
-} */
+
 .product .amount > div input {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
