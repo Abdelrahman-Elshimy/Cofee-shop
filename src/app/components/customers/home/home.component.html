@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="images">
+<ngb-carousel @fadeIn *ngIf="images">
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
             <img [src]="images[0]" alt="Random first slide">
@@ -175,7 +175,7 @@
 <section class="menu">
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s">
                 <div class="content text-right">
                     <span class="subheading">Discover</span>
                     <h2 class="mb-4">OUR MENU</h2>

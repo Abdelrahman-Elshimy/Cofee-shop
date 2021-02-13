@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
@@ -8,6 +9,21 @@ import { Good } from 'src/app/shared/interfaces/good.interface';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers: [NgbCarouselConfig],
+  animations: [
+    trigger('fadeIn', [
+      transition('void => *', [
+        style({
+          opacity: 0,
+        }),
+        animate(
+          1000,
+          style({
+            opacity: 1,
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class HomeComponent implements OnInit {
   tabs = 'dish';
