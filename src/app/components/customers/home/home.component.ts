@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Good } from 'src/app/shared/interfaces/good.interface';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -62,7 +63,9 @@ export class HomeComponent implements OnInit {
     config.showNavigationArrows = false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init();
+  }
 
   changeTab(tab) {
     this.tabs = tab;

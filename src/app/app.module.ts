@@ -24,7 +24,6 @@ import { SharedSectionTopComponent } from './components/customers/design-parts/s
 import { ServicesSectionComponent } from './components/customers/design-parts/services-section/services-section.component';
 import { BlogSectionComponent } from './components/customers/design-parts/blog-section/blog-section.component';
 import { StorySectionComponent } from './components/customers/design-parts/story-section/story-section.component';
-import { NgwWowModule } from 'ngx-wow';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -55,7 +54,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     AppRoutingModule,
     FormsModule,
-    NgwWowModule,
     BrowserAnimationsModule,
   ],
   providers: [],

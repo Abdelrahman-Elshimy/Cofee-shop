@@ -1,9 +1,12 @@
-<section class="mainSectionShared">
+<section class="mainSectionShared" @fadeIn>
     <div class="overlay d-flex align-items-center justify-content-center">
-        <h3>{{ title | uppercase }}</h3>
-        <div class="d-flex">
-            <a routerLink="">Home</a>
-            <a>{{ title | titlecase }}</a>
+        <div data-aos="fade-up">
+            <h3>{{ title | uppercase }}</h3>
+            <div class="d-flex">
+                <a routerLink="">Home</a>
+                <a>{{ title | titlecase }}</a>
+            </div>
         </div>
+
     </div>
 </section>
