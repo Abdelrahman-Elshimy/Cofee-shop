@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Good } from 'src/app/shared/interfaces/good.interface';
 import * as AOS from 'aos';
+import { ApiServiceService } from 'src/app/Api/api-service.service';
 
 @Component({
   selector: 'app-home',
@@ -31,35 +32,12 @@ export class HomeComponent implements OnInit {
   images = ['bg_1.jpg', 'bg_2.jpg', 'bg_3.jpg'].map(
     (n) => `../assets/images/${n}`
   );
-
+  success = [];
   errorForm = '';
-  goods: Array<Good> = [
-    {
-      name: 'Apple',
-      price: 4.3,
-      photoUrl: 'assets/images/headphone.jpg',
-      description: 'Headphone',
-    },
-    {
-      name: 'Apple',
-      price: 4.3,
-      photoUrl: 'assets/images/headphone.jpg',
-      description: 'Headphone',
-    },
-    {
-      name: 'Apple',
-      price: 4.3,
-      photoUrl: 'assets/images/headphone.jpg',
-      description: 'Headphone',
-    },
-    {
-      name: 'Apple',
-      price: 4.3,
-      photoUrl: 'assets/images/headphone.jpg',
-      description: 'Headphone',
-    },
-  ];
-  constructor(config: NgbCarouselConfig) {
+  constructor(
+    config: NgbCarouselConfig,
+    private apiService: ApiServiceService
+  ) {
     config.showNavigationArrows = false;
   }
 
@@ -74,6 +52,16 @@ export class HomeComponent implements OnInit {
   book(form: NgForm) {
     if (form.valid) {
       console.log(form.value);
+      const observeAddTable = this.apiService.bookATable(form.value);
+      console.log(observeAddTable);
+
+      observeAddTable.subscribe((data) => {
+        this.success.push({ message: 'Table Booked Successfully' });
+        setTimeout(() => {
+          this.success = [];
+        }, 4000);
+        form.resetForm();
+      });
     } else {
       this.errorForm = 'Please Entre all infromation required';
     }

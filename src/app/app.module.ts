@@ -25,7 +25,7 @@ import { ServicesSectionComponent } from './components/customers/design-parts/se
 import { BlogSectionComponent } from './components/customers/design-parts/blog-section/blog-section.component';
 import { StorySectionComponent } from './components/customers/design-parts/story-section/story-section.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
