@@ -15,12 +15,13 @@ ngb-carousel img {
 }
 .carousel-caption h1 {
   font-size: 3rem;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
 }
 .carousel-caption p {
   font-size: 1.2rem;
 }
+
 .links-content {
   margin-bottom: 110px;
 }
@@ -50,6 +51,27 @@ ngb-carousel img {
 .links-content > div.menus:hover {
   background-color: #c49b63;
   border: 1px solid transparent;
+}
+@media (max-width: 800px) {
+  .carousel-caption h1 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  .links-content > div a {
+    font-size: 0.8rem;
+  }
+  .links-content > div {
+    padding: 0.5rem 1rem;
+  }
+  .gallery {
+    display: none !important;
+  }
+  .menu .toTop {
+    margin-top: 20px !important;
+  }
 }
 
 .booking {
@@ -350,7 +372,7 @@ ngb-carousel img {
 }
 
 .contact {
-  background-color: #000000;
+  background-color: rgb(0, 0, 0, 0.5);
   padding: 7rem 0;
   color: #ffffff;
 }

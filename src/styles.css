@@ -3,6 +3,7 @@
 body {
   font-family: "Poppins", Arial, sans-serif;
   background: url("./assets/images/bg_4.jpg") no-repeat fixed;
+  position: relative;
 }
 h1,
 h2,
@@ -14,4 +15,9 @@ h6 {
 }
 * {
   box-sizing: border-box;
+}
+
+.spi {
+  background-color: rgba(0, 0, 0, 1);
+  height: 100vh;
 }

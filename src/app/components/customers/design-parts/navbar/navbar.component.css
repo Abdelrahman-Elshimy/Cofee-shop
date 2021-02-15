@@ -5,6 +5,10 @@
   width: 100%;
   border-bottom: 0.1px solid rgba(231, 221, 221, 0.3);
 }
+
+.navbar-toggler {
+  display: none !important;
+}
 .navbar-nav > .nav-item > .nav-link {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
