@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  text-align: center;
 }
 .mainSectionShared .overlay {
   position: absolute;
@@ -16,9 +17,10 @@
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 2;
   flex-direction: column;
+  text-align: center;
 }
 .mainSectionShared .overlay a {
-  margin: 5px;
+  /* margin: 5px; */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   text-decoration: none;
   color: #ffffff;
@@ -26,7 +28,13 @@
 }
 .mainSectionShared .overlay a:first-child {
   color: #cccccc;
+  margin-right: 5px;
 }
 .mainSectionShared .overlay a:last-child {
   color: #aaaaaa;
+}
+
+.mainSectionShared .bottom-con {
+  text-align: center;
+  justify-content: center;
 }

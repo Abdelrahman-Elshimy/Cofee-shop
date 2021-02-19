@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/Api/api-service.service';
 import { SubpagesService } from 'src/app/shared/subpages.service';
 import { PageTitle } from './../design-parts/titlePage.enum';
+
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +11,18 @@ import { PageTitle } from './../design-parts/titlePage.enum';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  constructor(private subTitle: SubpagesService) {
+  productsOfCategories;
+  constructor(
+    private subTitle: SubpagesService,
+    private apiSerive: ApiServiceService
+  ) {
     this.subTitle.subPageTitle = PageTitle.menu;
+    this.apiSerive.getProductsOfEachCategory().subscribe((data) => {
+      this.productsOfCategories = data;
+    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init();
+  }
 }

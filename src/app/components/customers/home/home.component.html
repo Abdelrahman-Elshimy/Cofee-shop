@@ -273,41 +273,21 @@
 </section>
 
 <section class="best text-center mb-5 mt-5">
-    <div class="container">
+    <div class="container" *ngIf="bestSellerCoffes">
         <span class="subheading">Discover</span>
         <h2 class="mb-4">BEST COFFEE SELLERS </h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia <br> and Consonantia, there live the
             blind
             texts.</p>
         <div class="row mt-5">
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-1.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
+            <div class="col-lg-3 mb-5 col-md-6" *ngFor="let bestCoffee of bestSellerCoffes">
+                <img src="../assets/images/{{bestCoffee.image}}" alt="" width="100%" height="200px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product/{{ bestCoffee._id }}">{{ bestCoffee.name }}</a>
                 <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
+                <p class="price">${{bestCoffee.price}}</p>
                 <a class="addtocart" routerLink="cart">Add to Cart</a>
             </div>
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-2.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
-                <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-3.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
-                <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-4.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
-                <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
+
         </div>
     </div>
     <div class="gallery d-flex" data-aos="fade-up" data-aos-duration="1000">
@@ -334,34 +314,23 @@
             blind
             texts.</p>
         <div class="tabs mt-5">
-            <button [class.active]="tabs == 'dish'" (click)="changeTab('dish')">Main Dish</button>
-            <button [class.active]="tabs == 'drink'" (click)="changeTab('drink')">Drinks</button>
-            <button [class.active]="tabs == 'dessert'" (click)="changeTab('dessert')">Desserts</button>
+            <button [class.active]="tabs == 'Dish'" (click)="changeTab('Dish')">Main Dish</button>
+            <button [class.active]="tabs == 'drinks'" (click)="changeTab('drinks')">Drinks</button>
+            <button [class.active]="tabs == 'desserts'" (click)="changeTab('desserts')">Desserts</button>
         </div>
-        <div class="row mt-5" *ngIf="tabs == 'dish'">
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/dish-1.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">GRILLED BEEF</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/dish-2.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">GRILLED BEEF</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/dish-3.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">GRILLED BEEF</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
+        <div *ngFor="let cats of productsOfCategories">
+            <div class="row mt-5" *ngIf="tabs == cats.name">
+                <div class="col-lg-4 mb-5 col-md-6" *ngFor="let products of cats.catProducts">
+                    <img src="../assets/images/{{products.image}}" alt="" width="100%" height="300px">
+                    <a class="mt-3 mb-2 d-block name" routerLink="product">{{ products.name }}</a>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                    <p class="price">${{products.price}}</p>
+                    <a class="addtocart" routerLink="cart">Add to Cart</a>
+                </div>
             </div>
         </div>
-        <div class="row mt-5" *ngIf="tabs == 'drink'">
+
+        <!-- <div class="row mt-5" *ngIf="tabs == 'drink'">
             <div class="col-lg-4 mb-5 col-md-6">
                 <img src="../assets/images/drink-1.jpg" alt="" width="100%" height="300px">
                 <a class="mt-3 mb-2 d-block name" routerLink="product">LEMONADE JUICE</a>
@@ -369,20 +338,7 @@
                 <p class="price">$2.90</p>
                 <a class="addtocart" routerLink="cart">Add to Cart</a>
             </div>
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/drink-2.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">PINEAPPLE JUICE</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/drink-3.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">SODA DRINKS</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
+
         </div>
         <div class="row mt-5" *ngIf="tabs == 'dessert'">
             <div class="col-lg-4 mb-5 col-md-6">
@@ -392,21 +348,8 @@
                 <p class="price">$2.90</p>
                 <a class="addtocart" routerLink="cart">Add to Cart</a>
             </div>
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/dessert-2.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">HOT CAKE HONEY</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/dessert-3.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">HOT CAKE HONEY</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-        </div>
+
+        </div> -->
     </div>
 </section>
 

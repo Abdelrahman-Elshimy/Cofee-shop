@@ -2,68 +2,19 @@
 <section class="menu">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <h2 class="mb-4 mt-5">STARTER</h2>
-                <div class="menu-item" *ngFor="let x of ['d', 'd', 'd', 'd']">
+            <div class="col-lg-6" *ngFor="let cats of productsOfCategories">
+                <h2 class="mb-4 mt-5" *ngIf="cats.catProducts.length > 0" data-aos="fade-up" data-aos-once="false"
+                    data-aos-duration="500">{{cats.name}}</h2>
+                <div class="menu-item" *ngFor="let product of cats.catProducts" data-aos="fade-up" data-aos-once="false"
+                    data-aos-duration="1000">
                     <div class="menu-content d-flex">
-                        <img src="../assets/images/dish-1.jpg" alt="">
+                        <img src="../assets/images/{{product.image}}" alt="">
                         <div class="content">
                             <div class="d-flex justify-content-between">
                                 <a routerLink="">
-                                    <p>Cornish - Mackerel</p>
+                                    <p>{{product.name}}</p>
                                 </a>
-                                <p>$20.00</p>
-                            </div>
-                            <p>A small river named Duden flows by their place and supplies </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4 mt-5">MAIN DISH </h2>
-                <div class="menu-item" *ngFor="let x of ['d', 'd', 'd', 'd']">
-                    <div class="menu-content d-flex">
-                        <img src="../assets/images/dish-2.jpg" alt="">
-                        <div class="content">
-                            <div class="d-flex justify-content-between">
-                                <a routerLink="">
-                                    <p>Cornish - Mackerel</p>
-                                </a>
-                                <p>$20.00</p>
-                            </div>
-                            <p>A small river named Duden flows by their place and supplies </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4 mt-5">DESSERTS </h2>
-                <div class="menu-item" *ngFor="let x of ['d', 'd', 'd', 'd']">
-                    <div class="menu-content d-flex">
-                        <img src="../assets/images/dessert-1.jpg" alt="">
-                        <div class="content">
-                            <div class="d-flex justify-content-between">
-                                <a routerLink="">
-                                    <p>Cornish - Mackerel</p>
-                                </a>
-                                <p>$20.00</p>
-                            </div>
-                            <p>A small river named Duden flows by their place and supplies </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4 mt-5">DRINKS</h2>
-                <div class="menu-item" *ngFor="let x of ['d', 'd', 'd', 'd']">
-                    <div class="menu-content d-flex">
-                        <img src="../assets/images/drink-1.jpg" alt="">
-                        <div class="content">
-                            <div class="d-flex justify-content-between">
-                                <a routerLink="">
-                                    <p>Cornish - Mackerel</p>
-                                </a>
-                                <p>$20.00</p>
+                                <p>${{product.price}}</p>
                             </div>
                             <p>A small river named Duden flows by their place and supplies </p>
                         </div>

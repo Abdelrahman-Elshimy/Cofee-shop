@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/Api/api-service.service';
+import { Good } from 'src/app/shared/interfaces/good.interface';
 import { SubpagesService } from 'src/app/shared/subpages.service';
 import { PageTitle } from '../design-parts/titlePage.enum';
 
@@ -8,8 +10,16 @@ import { PageTitle } from '../design-parts/titlePage.enum';
   styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
-  constructor(private subPageTitle: SubpagesService) {
+  products: Array<Good>;
+  constructor(
+    private subPageTitle: SubpagesService,
+    private apiService: ApiServiceService
+  ) {
     this.subPageTitle.subPageTitle = PageTitle.shop;
+    let productObservable = this.apiService.getAllProducts();
+    productObservable.subscribe((products: Array<Good>) => {
+      this.products = products;
+    });
   }
 
   ngOnInit(): void {}

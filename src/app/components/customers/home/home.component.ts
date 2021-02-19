@@ -5,6 +5,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Good } from 'src/app/shared/interfaces/good.interface';
 import * as AOS from 'aos';
 import { ApiServiceService } from 'src/app/Api/api-service.service';
+import { BookTable } from 'src/app/shared/interfaces/bookTable.interface';
 
 @Component({
   selector: 'app-home',
@@ -28,17 +29,28 @@ import { ApiServiceService } from 'src/app/Api/api-service.service';
   ],
 })
 export class HomeComponent implements OnInit {
-  tabs = 'dish';
+  tabs = 'Dish';
   images = ['bg_1.jpg', 'bg_2.jpg', 'bg_3.jpg'].map(
     (n) => `../assets/images/${n}`
   );
   success = [];
   errorForm = '';
+  bestSellerCoffes: Array<Good>;
+  productsOfCategories;
   constructor(
     config: NgbCarouselConfig,
     private apiService: ApiServiceService
   ) {
     config.showNavigationArrows = false;
+    this.apiService.getProductsOfEachCategory().subscribe((data) => {
+      this.productsOfCategories = data;
+      console.log(this.productsOfCategories);
+    });
+    this.apiService
+      .getBestSelllerOfCoffeeCategory()
+      .subscribe((data: Array<Good>) => {
+        this.bestSellerCoffes = data;
+      });
   }
 
   ngOnInit(): void {
@@ -51,10 +63,15 @@ export class HomeComponent implements OnInit {
 
   book(form: NgForm) {
     if (form.valid) {
-      console.log(form.value);
-      const observeAddTable = this.apiService.bookATable(form.value);
-      console.log(observeAddTable);
-
+      let book: BookTable = {
+        firstName: form.value.firstName,
+        lastName: form.value.lastName,
+        date: form.value.date,
+        time: form.value.time,
+        phone: form.value.phone,
+        message: form.value.message,
+      };
+      const observeAddTable = this.apiService.bookATable(book);
       observeAddTable.subscribe((data) => {
         this.success.push({ message: 'Table Booked Successfully' });
         setTimeout(() => {

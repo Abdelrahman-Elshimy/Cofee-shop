@@ -5,35 +5,15 @@
         <p>Far far away, behind the word mountains, far from the countries Vokalia <br> and Consonantia, there live the
             blind
             texts.</p>
-        <div class="row mt-5" *ngFor="let i of ['1', '2', '3']">
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-1.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
+        <div class="row mt-5">
+            <div class="col-lg-3 mb-5 col-md-6" *ngFor="let product of products">
+                <img src="../assets/images/{{product.image}}" alt="" width="100%" height="200px">
+                <a class="mt-3 mb-2 d-block name" routerLink="product">{{product.name}}</a>
                 <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
+                <p class="price">${{product.price}}</p>
                 <a class="addtocart" routerLink="cart">Add to Cart</a>
             </div>
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-2.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
-                <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-3.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
-                <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-            <div class="col-lg-3 mb-5 col-md-6">
-                <img src="../assets/images/menu-4.jpg" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">COFFEE CAPUCCINO</a>
-                <p>A small river named Duden flows by their place and supplies</p>
-                <p class="price">$5.6</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
+
         </div>
     </div>
 </section>
