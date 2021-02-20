@@ -1,17 +1,17 @@
 <app-shared-section-top></app-shared-section-top>
 
-<section class="product">
+<section class="product" *ngIf="product">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="content">
-                    <img src="../assets/images/menu-2.jpg" alt="" width="100%">
+                    <img src="../assets/images/{{product.image}}" alt="" width="100%" height="450px">
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="content-info">
-                    <h3>CREAMY LATTE COFFEE </h3>
-                    <p class="price mt-4 mb-3">$5.9</p>
+                    <h3>{{product.name}}</h3>
+                    <p class="price mt-4 mb-3">${{product.price}}</p>
                     <p class="desc">
                         On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
                         would have been rewritten a thousand times and everything that was left from its origin would be
@@ -33,15 +33,11 @@
                         </div>
                         <br>
                         <div class="amount mb-3 d-flex">
-                            <!-- <div class="minus">
-                                <p>-</p>
-                            </div> -->
+
                             <div class="input-amount">
                                 <input type="number" value="0">
                             </div>
-                            <!-- <div class="plus">
-                                <p>+</p>
-                            </div> -->
+
                         </div>
                         <button type="submit">Add to cart</button>
                     </form>

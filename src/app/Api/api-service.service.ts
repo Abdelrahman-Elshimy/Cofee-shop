@@ -29,4 +29,9 @@ export class ApiServiceService {
   getProductsOfEachCategory() {
     return this.http.get(this.URL + 'products/getProductsOfeacCategory');
   }
+
+  // get products of each category
+  getProductData(id) {
+    return this.http.get(this.URL + 'products/' + id);
+  }
 }

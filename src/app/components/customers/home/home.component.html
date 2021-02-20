@@ -66,20 +66,6 @@
         </div>
     </ng-template>
 </ngb-carousel>
-<!-- <div class="container text-center mt-5">
-    <div class="row text-center">
-        <div class="col-lg-4 mb-5 col-md-6" *ngFor="let good of goods">
-            <div class="card" style="width: 100%">
-                <img class="card-img-top" src="../{{good.photoUrl}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{good.name}}</h5>
-                    <p class="card-text">{{ good.description }}</p>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <section class="booking" data-aos="fade-up" data-aos-once="true">
     <div class="container">
@@ -282,7 +268,7 @@
         <div class="row mt-5">
             <div class="col-lg-3 mb-5 col-md-6" *ngFor="let bestCoffee of bestSellerCoffes">
                 <img src="../assets/images/{{bestCoffee.image}}" alt="" width="100%" height="200px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product/{{ bestCoffee._id }}">{{ bestCoffee.name }}</a>
+                <a class="mt-3 mb-2 d-block name" [routerLink]="['product', bestCoffee._id]">{{ bestCoffee.name }}</a>
                 <p>A small river named Duden flows by their place and supplies</p>
                 <p class="price">${{bestCoffee.price}}</p>
                 <a class="addtocart" routerLink="cart">Add to Cart</a>
@@ -322,34 +308,13 @@
             <div class="row mt-5" *ngIf="tabs == cats.name">
                 <div class="col-lg-4 mb-5 col-md-6" *ngFor="let products of cats.catProducts">
                     <img src="../assets/images/{{products.image}}" alt="" width="100%" height="300px">
-                    <a class="mt-3 mb-2 d-block name" routerLink="product">{{ products.name }}</a>
+                    <a class="mt-3 mb-2 d-block name" [routerLink]="['product', products._id]">{{ products.name }}</a>
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
                     <p class="price">${{products.price}}</p>
                     <a class="addtocart" routerLink="cart">Add to Cart</a>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="row mt-5" *ngIf="tabs == 'drink'">
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/drink-1.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">LEMONADE JUICE</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-
-        </div>
-        <div class="row mt-5" *ngIf="tabs == 'dessert'">
-            <div class="col-lg-4 mb-5 col-md-6">
-                <img src="../assets/images/dessert-1.jpg" alt="" width="100%" height="300px">
-                <a class="mt-3 mb-2 d-block name" routerLink="product">HOT CAKE HONEY</a>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-                <p class="price">$2.90</p>
-                <a class="addtocart" routerLink="cart">Add to Cart</a>
-            </div>
-
-        </div> -->
     </div>
 </section>
 

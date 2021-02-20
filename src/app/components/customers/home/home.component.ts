@@ -6,6 +6,7 @@ import { Good } from 'src/app/shared/interfaces/good.interface';
 import * as AOS from 'aos';
 import { ApiServiceService } from 'src/app/Api/api-service.service';
 import { BookTable } from 'src/app/shared/interfaces/bookTable.interface';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -39,7 +40,8 @@ export class HomeComponent implements OnInit {
   productsOfCategories;
   constructor(
     config: NgbCarouselConfig,
-    private apiService: ApiServiceService
+    private apiService: ApiServiceService,
+    private router: Router
   ) {
     config.showNavigationArrows = false;
     this.apiService.getProductsOfEachCategory().subscribe((data) => {
@@ -82,5 +84,8 @@ export class HomeComponent implements OnInit {
     } else {
       this.errorForm = 'Please Entre all infromation required';
     }
+  }
+  navigateToProductPage(id) {
+    this.router.navigate(['product', { id: id }]);
   }
 }
