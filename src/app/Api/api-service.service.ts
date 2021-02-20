@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiServiceService {
-  private URL = 'http://localhost:3000/';
+  private URL = 'https://coffee-shop-api-abdelrahman.herokuapp.com/';
   constructor(private http: HttpClient) {}
 
   // Booking tables
